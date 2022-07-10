@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: PhD student at <a href='http://nmail.kaist.ac.kr/wordpress/'>NMAIL, KAIST</a>.
+subtitle: PhD candidate at <a href='http://nmail.kaist.ac.kr/wordpress/'>NMAIL, KAIST</a>.
 
 profile:
   align: right
@@ -20,5 +20,3 @@ social: true  # includes social icons at the bottom of the page
 Hello, my name is Khang Truong Giang. I am currently a PhD student at [KAIST](https://www.kaist.ac.kr/en/). My advisor is Prof. [Sungho Jo](http://nmail.kaist.ac.kr/wordpress/index.php/professor-jo-sungho/). Before joining KAIST, I did my Bachelor at Hanoi University of Science and Technology (HUST), Vietnam. During this time, I was a research assistant in [Data Science Lab](http://ds.soict.hust.edu.vn/) and worked on some projects related to topic modeling, machine learning.
 
 **Research interests:** Currently, I focus on some topics in 3D vision such as 3D reconstruction, multi-view stereo, or camera pose estimation. My goal is to produce deep learning models which can achieve high performance while only using limited GPU resources. I wrote several programs on [Github](https://github.com/TruongKhang).
-
-
