@@ -2,7 +2,7 @@
 layout: page
 permalink: /publications/
 title: publications
-description: (*) denotes the co-first authors, $$ \dagger $$ is the corresponding author
+description: (*) denotes the co-first authors, ^ is the corresponding author
 years: [2022, 2020, 2019]
 nav: true
 nav_order: 1
