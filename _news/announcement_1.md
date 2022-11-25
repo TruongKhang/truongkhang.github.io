@@ -1,7 +1,7 @@
 ---
 layout: post
-date: 2015-10-22 15:59:00-0400
+date: 2022-11-20
 inline: true
 ---
 
-A simple inline announcement.
+Two paper accepted at AAAI-23 and Pattern Recognition
