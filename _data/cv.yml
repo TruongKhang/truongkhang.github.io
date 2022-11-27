@@ -48,7 +48,7 @@
       institution: Viettel Group, Vietnam
       year: 2018-2019
       description:
-        - My project is about analyzing customer behavior in telecommunication.
+        - My project was about analyzing customer behavior in telecommunication. I built a classification model and deployed it with Flask.
         # - Description 2.
 
     - title: Research Assistant
@@ -56,7 +56,7 @@
       year: 2016-2019
       description:
         - Topic modeling for the hidden semantic analysis, focusing on stochastic learning/online learning methods, approximation inference for topic models. 
-        - Project code at https://github.com/hncuong/topicmodel-lib
+        - Main contributor of project code at https://github.com/hncuong/topicmodel-lib.
 
     # - title: Professor of Theoretical Physics
     #   institution: Karl-Ferdinand University, Prague, Czechoslovakia
@@ -84,13 +84,14 @@
       items: 
         - Consolation place award in both Algebra Olympic Contest and Analytics Olympic Contest at HUST
         - Certificate of Excellence from HUST for the first rank student in this year
-    - year: 2017
+    # - year: 2017
+    #   items:
+    #     - Certificate of Excellence in the Intelligence Program at Cinnamon AI Lab
+    #     - The Lotte Sholarship (from Lotte Foundation in Vietnam)
+    - year: 2019-now
       items:
-        - Certificate of Excellence in the Intelligence Program at Cinnamon AI Lab
-        - The Lotte Sholarship (from Lotte Foundation in Vietnam)
-    - year: 2021-now
-      items:
-        - Hyundai Motor Chung Mong-Koo Foundation Global Scholarship
+        - KAIST scholarship for International Student.
+        # - Hyundai Motor Chung Mong-Koo Foundation Global Scholarship
 
 # - title: Academic Interests
 #   type: nested_list
