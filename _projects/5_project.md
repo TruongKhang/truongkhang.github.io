@@ -1,7 +1,7 @@
 ---
 layout: page
-title: my babe
-description: Happy New Year!
+title: Happy New Year
+description:
 img:
 importance: 4
 category: fun
