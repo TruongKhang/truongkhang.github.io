@@ -99,8 +99,10 @@ body.sticky-bottom-footer {
       }
       .title {
         font-weight: bolder;
+        margin-left: 2rem;
       }
       .author {
+        margin-left: 2rem;
         a {
           border-bottom: 1px dashed var(--global-theme-color);
           &:hover {
@@ -114,6 +116,7 @@ body.sticky-bottom-footer {
         }
       }
       .links {
+        margin-left: 2rem;
         a.btn {
           color: var(--global-text-color);
           border: 1px solid var(--global-text-color);
