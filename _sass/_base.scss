@@ -480,12 +480,12 @@ footer.sticky-bottom {
     li {
       margin-bottom: 1rem;
       .preview {
-        width: 300px;
-        min-width: 250px;
+        width: 100%;
+        min-width: 200px;
         max-width: 300px;
       }
       .abbr {
-        width: 300px;
+        height: 2rem;
         margin-bottom: 0.5rem;
         abbr {
           display: inline-block;
