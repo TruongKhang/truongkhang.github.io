@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Khang Truong Giang</title>
+<meta name="description" content="Khang Truong Giang — 3D Vision Engineer at 42dot (Hyundai Motor Group), Ph.D. from KAIST. Research in 3D reconstruction, feature matching, and visual localization." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#fcfcfd;          /* clean, faintly-cool near-white */
+    --text:#1b1e23;        /* charcoal — softer than pure black */
+    --muted:#5c6571;       /* secondary text */
+    --line:#e6e8eb;        /* hairline borders */
+    --accent:#2456a6;      /* deep cobalt — the single highlight colour */
+    --surface:#f3f5f8;     /* pills, thumbnails, subtle fills */
+    --accent-tint:#eef3fb; /* link hover background */
+    --sans:"Inter",system-ui,-apple-system,sans-serif;
+    --serif:"Newsreader",Georgia,serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;background:var(--bg);color:var(--text);
+    font-family:var(--sans);font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:832px;margin:0 auto;padding:3.5rem 1.5rem 4rem;}
+  ::selection{background:rgba(36,86,166,.16);}
+  a{color:var(--accent);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:2px;}
+
+  /* ---------- header / profile ---------- */
+  .profile{display:flex;gap:2rem;align-items:flex-start;flex-wrap:wrap;}
+  .photo{
+    width:150px;height:150px;border-radius:50%;flex-shrink:0;object-fit:cover;
+    background:var(--surface);border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--muted);font-size:.78rem;text-align:center;line-height:1.3;
+  }
+  .intro{flex:1;min-width:260px;}
+  .intro h1{font-family:var(--serif);font-weight:600;font-size:2rem;margin:0 0 .35rem;letter-spacing:-.01em;}
+  .role{color:var(--muted);font-size:1rem;margin:0 0 1rem;}
+  .role b{color:var(--text);font-weight:500;}
+  .links{display:flex;flex-wrap:wrap;gap:.4rem 1.1rem;margin-top:1rem;font-size:.92rem;}
+  .links a{display:inline-flex;align-items:center;gap:.35rem;}
+  .links svg{width:15px;height:15px;stroke:currentColor;fill:none;stroke-width:1.6;}
+
+  /* ---------- bio ---------- */
+  .bio{margin-top:2.4rem;font-size:1.02rem;}
+  .bio p{margin:0 0 1rem;}
+
+  /* ---------- sections ---------- */
+  section{margin-top:3rem;}
+  h2{font-family:var(--serif);font-weight:600;font-size:1.4rem;margin:0 0 1.1rem;
+     padding-bottom:.5rem;border-bottom:1px solid var(--line);letter-spacing:-.01em;}
+
+  /* research interests */
+  .interests{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:.5rem;}
+  .interests li{font-size:.9rem;background:var(--surface);border:1px solid var(--line);
+    border-radius:999px;padding:.3rem .85rem;color:#3c454f;}
+
+  /* news — scrolls once it gets tall */
+  .news-scroll{max-height:300px;overflow-y:auto;padding-right:.6rem;
+    -webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);
+            mask-image:linear-gradient(to bottom,transparent 0,#000 14px,#000 calc(100% - 14px),transparent 100%);}
+  .news-scroll::-webkit-scrollbar{width:7px;}
+  .news-scroll::-webkit-scrollbar-thumb{background:#ccd2d9;border-radius:4px;}
+  .news-scroll::-webkit-scrollbar-track{background:transparent;}
+  .news{margin:0;padding:0;list-style:none;}
+  .news li{display:grid;grid-template-columns:6.5rem 1fr;gap:1rem;padding:.55rem 0;
+    border-bottom:1px solid var(--line);font-size:.96rem;}
+  .news li:last-child{border-bottom:0;}
+  .news .date{color:var(--muted);font-size:.85rem;padding-top:.1rem;white-space:nowrap;}
+  @media(max-width:520px){.news li{grid-template-columns:1fr;gap:.1rem;}}
+
+  /* publications */
+  .pub-legend{font-size:.82rem;color:var(--muted);margin:-.4rem 0 1.2rem;}
+  .pub-legend .sym{color:var(--accent);font-weight:600;}
+  .pub{display:flex;gap:1.2rem;padding:1.1rem 0;border-bottom:1px solid var(--line);align-items:flex-start;}
+  .pub:last-of-type{border-bottom:0;}
+  .thumb{width:240px;height:156px;flex-shrink:0;border-radius:2px;border:0.5px solid var(--line);
+    background:var(--surface);display:flex;align-items:center;justify-content:center;object-fit:cover;
+    color:var(--muted);font-size:.62rem;text-align:center;padding:.3rem;line-height:1.25;}
+  .pub-body .title{font-weight:500;font-size:1rem;line-height:1.35;}
+  .pub-body .authors{color:#3c454f;font-size:.9rem;margin:.2rem 0 .15rem;}
+  .pub-body .authors .me{color:var(--text);font-weight:600;}
+  .pub-body .authors .sym{color:var(--accent);font-weight:600;}
+  .pub-body .venue{color:var(--muted);font-size:.88rem;}
+  .pub-body .venue em{font-style:italic;color:#3c454f;}
+  .pub-body .note{color:var(--accent);}
+  .pub-body .tags{margin-top:.5rem;font-size:.85rem;display:flex;flex-wrap:wrap;gap:.5rem;}
+  .pub-body .tags a{display:inline-flex;align-items:center;gap:.3rem;border:1px solid var(--line);
+    border-radius:4px;padding:.2rem .6rem;color:var(--accent);}
+  .pub-body .tags a:hover{text-decoration:none;border-color:var(--accent);background:var(--accent-tint);}
+  .pub-body .tags svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:1.7;}
+  @media(max-width:520px){.pub{flex-direction:column;gap:.7rem;}.thumb{width:100%;height:120px;}}
+
+  footer{margin-top:3.5rem;padding-top:1.5rem;border-top:1px solid var(--line);
+    color:var(--muted);font-size:.82rem;text-align:center;}
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- ===== Profile ===== -->
+  <header class="profile">
+    <!-- To use a real photo: save it as profile.jpg in the same folder, then replace
+         the <div class="photo">…</div> below with:
+         <img class="photo" src="profile.jpg" alt="Khang Truong Giang" /> -->
+    <div class="photo"><img class="photo" src="img/prof_pic.jpeg" alt="Khang Truong Giang" /></div>
+    <div class="intro">
+      <h1>Khang Truong Giang</h1>
+      <p class="role"><b>3D Vision Engineer</b> at 42dot, Hyundai Motor Group · <b>Ph.D.</b>, KAIST</p>
+      <nav class="links">
+        <a href="mailto:khangtg.hust.it@gmail.com">
+          <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a>
+        <a href="https://scholar.google.com/citations?user=mEvl5GsAAAAJ&hl=en&authuser=2" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M12 3 1 9l11 6 9-4.9V17"/><path d="M6 12.5V17c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg>Scholar</a>
+        <a href="https://github.com/TruongKhang" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5m12 4.5v-3.6c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.3 4.3 0 0 0-.1-3.2s-1-.3-3.4 1.3a11.6 11.6 0 0 0-6 0C6.9 2.9 5.9 3.2 5.9 3.2a4.3 4.3 0 0 0-.1 3.2A4.6 4.6 0 0 0 4.5 9.6c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>GitHub</a>
+        <a href="docs/CV_Khang_Truong_With_Scholar.pdf" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>CV</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== Bio ===== -->
+  <div class="bio">
+    <p>I am a 3D vision researcher working on 3D reconstruction and neural rendering from 2D images. I currently build multi-camera perception for autonomous driving at <a href="https://42dot.ai/" target="_blank" rel="noopener">42dot</a>, the global software center of Hyundai Motor Group.</p>
+    <p>I received my Ph.D. in Computer Science from <a href="https://www.kaist.ac.kr/en/" target="_blank" rel="noopener">KAIST</a> in 2024, advised by <a href="http://nmail.kaist.ac.kr/wordpress/index.php/professor-jo-sungho/" target="_blank" rel="noopener">Prof. Sungho Jo</a> and <a href="https://sites.google.com/view/smrlab/professor" target="_blank" rel="noopener">Prof. Soohwan Song</a>, where my research spanned multi-view stereo, feature matching, and visual localization. My work has appeared at CVPR, ICLR, AAAI, IJCAI, and IEEE TIP.</p>
+  </div>
+
+  <!-- ===== Research interests ===== -->
+  <section>
+    <h2>Research interests</h2>
+    <ul class="interests">
+      <li>3D reconstruction</li>
+      <li>Multi-view stereo</li>
+      <li>Feature matching</li>
+      <li>Visual localization</li>
+      <li>3D Gaussian splatting</li>
+      <li>Autonomous driving perception</li>
+    </ul>
+  </section>
+
+  <!-- ===== News ===== -->
+  <section>
+    <h2>News</h2>
+    <div class="news-scroll">
+      <ul class="news" id="news-list"></ul>
+    </div>
+  </section>
+
+  <!-- ===== Selected publications ===== -->
+  <section>
+    <h2>Selected publications</h2>
+    <p class="pub-legend"><span class="sym">*</span> equal / co-first contribution &nbsp;&nbsp; <span class="sym">&dagger;</span> corresponding author</p>
+    <div id="pub-list"></div>
+    <p style="font-size:.9rem;margin-top:1.2rem;">
+      Full list on <a href="https://scholar.google.com/citations?user=mEvl5GsAAAAJ&hl=en&authuser=2" target="_blank" rel="noopener">Google Scholar</a>.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2026 Khang Truong Giang &nbsp;·&nbsp; Hosted on GitHub Pages
+  </footer>
+
+</div>
+
+
+<!-- =====================================================================
+     EDIT YOUR CONTENT HERE — no HTML or CSS knowledge needed.
+     Just add or change items inside the two lists below, then save.
+     ===================================================================== -->
+<script>
+/* -----------------------------------------------------------------
+   NEWS
+   To add a news item, copy one line and put it at the TOP of the list
+   (newest first). Keep the format:  { date: "...", text: "..." },
+   You can use <strong>bold</strong> or <em>italics</em> inside text.
+----------------------------------------------------------------- */
+const NEWS = [
+  { date: "Aug 2025", text: "Our paper on online 3D Gaussian splatting with novel view selection is accepted to <strong>IJCAI 2025</strong>." },
+  { date: "Jun 2025", text: "<em>MVS-GS</em>, our online multi-view stereo mapping work, is published in <strong>IEEE Access</strong>." },
+  { date: "Jul 2024", text: "I joined <strong>42dot</strong> (Hyundai Motor Group) as a 3D Vision Engineer." },
+  { date: "Jun 2024", text: "Received the <strong>Outstanding Reviewer Award</strong> at CVPR 2024." },
+  { date: "Feb 2024", text: "<em>DeViLoc</em> is accepted to <strong>CVPR 2024</strong> as an <strong>Oral</strong> (top 3.3% of accepted papers)." },
+  { date: "Jun 2023", text: "Achieved a <strong>Silver Medal</strong> (top 9%) at the <a href=https://www.kaggle.com/competitions/image-matching-challenge-2023/leaderboard?> Kaggle Image Matching Challenge</a>." },
+  { date: "Nov 2022", text: "Two paper accepted at AAAI-23 and Pattern Recognition" },
+];
+
+/* -----------------------------------------------------------------
+   PUBLICATIONS
+   To add a paper, copy one { ... } block and edit the fields.
+
+   authors: list each author in order. Mark yourself and any symbols:
+       { name: "Khang Truong", me: true }   -> shown in bold
+       cofirst: true        -> adds the symbol  *   (equal / co-first)
+       corresponding: true  -> adds the symbol  †   (corresponding author)
+       (an author can have both, e.g. cofirst:true, corresponding:true)
+
+   thumb: either a short text label (shown in a grey box) OR an image
+          filename you upload to the repo, e.g. "topicfm.png".
+   note:  optional extra line (e.g. "Oral, top 3.3%"). Leave "" to hide.
+   code:  URL of the GitHub source code. Leave "" to hide that button.
+   paper: URL of the publication's official page. Leave "" to hide.
+----------------------------------------------------------------- */
+const PUBLICATIONS = [
+  {
+    title: "Online 3D Gaussian Splatting Modeling with Novel View Selection",
+    authors: [
+      { name: "B. Lee" },
+      { name: "J. Park" },
+      { name: "Khang Truong", me: true, corresponding: true },
+      { name: "Soohwan Song", corresponding: true },
+    ],
+    venue: "IJCAI",
+    year: "2025",
+    note: "",
+    thumb: "img/publication_preview/ijcai2025.png",
+    paper: "https://www.ijcai.org/proceedings/2025/148",
+  },
+  {
+    title: "Learning to Produce Semi-dense Correspondences for Visual Localization",
+    authors: [
+      { name: "Khang Truong", me: true },
+      { name: "Soohwan Song", corresponding: true },
+      { name: "Sungho Jo", corresponding: true },
+    ],
+    venue: "CVPR",
+    year: "2024",
+    note: "Oral, top 3.3%",
+    thumb: "img/publication_preview/cvpr2024.gif",
+    code: "https://github.com/TruongKhang/DeViLoc",
+    paper: "https://arxiv.org/abs/2402.08359",
+  },
+  {
+    title: "TopicFM+: Boosting Accuracy and Efficiency of Topic-Assisted Feature Matching",
+    authors: [
+      { name: "Khang Truong", me: true },
+      { name: "Soohwan Song", corresponding: true },
+      { name: "Sungho Jo", corresponding: true },
+    ],
+    venue: "IEEE Transactions on Image Processing (TIP)",
+    year: "2024",
+    note: "",
+    thumb: "img/publication_preview/tip2024.png",
+    code: "https://github.com/TruongKhang/TopicFM",
+    paper: "https://ieeexplore.ieee.org/document/10721347",
+  },
+  {
+    title: "TopicFM: Robust and Interpretable Topic-assisted Feature Matching",
+    authors: [
+      { name: "Khang Truong", me: true },
+      { name: "Soohwan Song", corresponding: true },
+      { name: "Sungho Jo", corresponding: true },
+    ],
+    venue: "AAAI",
+    year: "2023",
+    note: "",
+    thumb: "img/publication_preview/aaai2023.gif",
+    code: "https://github.com/TruongKhang/TopicFM",
+    paper: "https://arxiv.org/abs/2207.00328",
+  },
+  {
+    title: "Prior Depth-based Multi-view Stereo Network for Online 3D Model Reconstruction",
+    authors: [
+      { name: "Soohwan Song", cofirst: true },
+      { name: "Khang Truong", me: true, cofirst: true },
+      { name: "Daekyum Kim" },
+      { name: "Sungho Jo" },
+    ],
+    venue: "Pattern Recognition",
+    year: "2023",
+    note: "",
+    thumb: "img/publication_preview/pr2023.jpg",
+    code: "https://github.com/TruongKhang/prior-mvsnet",
+    paper: "https://www.sciencedirect.com/science/article/abs/pii/S003132032200677X",
+  },
+  {
+    title: "Curvature-guided Dynamic Scale Networks for Multi-view Stereo",
+    authors: [
+      { name: "Khang Truong", me: true },
+      { name: "Soohwan Song"},
+      { name: "Sungho Jo"},
+    ],
+    venue: "ICLR",
+    year: "2022",
+    note: "",
+    thumb: "img/publication_preview/iclr2022.gif",
+    code: "https://github.com/TruongKhang/cds-mvsnet",
+    paper: "https://openreview.net/pdf?id=_Wzj0J2xs2D",
+  },
+  {
+    title: "Sequential Depth Completion With Confidence Estimation for 3D Model Reconstruction",
+    authors: [
+      { name: "Khang Truong", me: true },
+      { name: "Soohwan Song"},
+      { name: "Daekyum Kim"},
+      { name: "Sunghee Choi"},
+    ],
+    venue: "RA-L",
+    year: "2021",
+    note: "",
+    thumb: "img/publication_preview/ral2021.gif",
+    code: "https://github.com/TruongKhang/depth-completion-seq-net",
+    paper: "http://nmail.kaist.ac.kr/paper/ral2021.pdf",
+  },
+];
+
+
+/* ===== Rendering (you don't need to touch anything below) ===== */
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");}
+
+function renderNews(){
+  document.getElementById("news-list").innerHTML = NEWS.map(function(n){
+    return '<li><span class="date">'+esc(n.date)+'</span><span>'+n.text+'</span></li>';
+  }).join("");
+}
+
+function authorHTML(a){
+  var sym = (a.cofirst ? "*" : "") + (a.corresponding ? "\u2020" : "");
+  var name = esc(a.name) + (sym ? '<span class="sym">'+sym+'</span>' : "");
+  return a.me ? '<span class="me">'+name+'</span>' : name;
+}
+
+function thumbHTML(t){
+  var isImg = /\.(png|jpe?g|gif|webp|svg)$/i.test(t);
+  return isImg
+    ? '<img class="thumb" src="'+esc(t)+'" alt="" />'
+    : '<div class="thumb">'+esc(t)+'</div>';
+}
+
+var ICON_CODE = '<svg viewBox="0 0 24 24"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>';
+var ICON_PAPER = '<svg viewBox="0 0 24 24"><path d="M14 3v5h5"/><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg>';
+
+function linksHTML(p){
+  var out = [];
+  if(p.code)  out.push('<a href="'+esc(p.code)+'" target="_blank" rel="noopener">'+ICON_CODE+'Code</a>');
+  if(p.paper) out.push('<a href="'+esc(p.paper)+'" target="_blank" rel="noopener">'+ICON_PAPER+'Paper</a>');
+  return out.length ? '<div class="tags">'+out.join("")+'</div>' : "";
+}
+
+function renderPubs(){
+  document.getElementById("pub-list").innerHTML = PUBLICATIONS.map(function(p){
+    var authors = p.authors.map(authorHTML).join(", ");
+    var note = p.note ? ' &nbsp;·&nbsp; <span class="note">'+esc(p.note)+'</span>' : "";
+    return '<div class="pub">'+thumbHTML(p.thumb)+
+      '<div class="pub-body">'+
+        '<div class="title">'+esc(p.title)+'</div>'+
+        '<div class="authors">'+authors+'</div>'+
+        '<div class="venue"><em>'+esc(p.venue)+'</em>, '+esc(p.year)+note+'</div>'+
+        linksHTML(p)+
+      '</div></div>';
+  }).join("");
+}
+
+renderNews();
+renderPubs();
+</script>
+</body>
+</html>
