@@ -1,6 +1,6 @@
 %==============================================================
 % Curriculum Vitae - Khang Truong Giang
-% Restyled two-page version with highlighted achievements
+% Two-page version with restrained color and selective bold emphasis
 % Compiles with pdflatex (also works on Overleaf). No inline math used.
 %==============================================================
 \documentclass[11pt,a4paper]{article}
@@ -17,17 +17,14 @@
 \usepackage{lastpage}
 
 % ----- Colors -----
-\definecolor{accent}{HTML}{0B3D91}   % deep blue (headers, name)
-\definecolor{kwcolor}{HTML}{0B3D91}  % keyword bold color
-\definecolor{hlcolor}{HTML}{D9E6FB}  % soft blue highlighter for metrics
+\definecolor{accent}{HTML}{0B3D91}   % deep blue for headings and links
 \definecolor{rule}{HTML}{B9C4D6}
 
-% ----- Highlight setup (xcolor only, no extra packages) -----
-\setlength{\fboxsep}{1.5pt}
-% \kw{} : bold accent keyword (skills / emphasis phrases)
-\newcommand{\kw}[1]{\textbf{\textcolor{kwcolor}{#1}}}
-% \hm{} : highlighted metric / hard achievement number
-\newcommand{\hm}[1]{\colorbox{hlcolor}{\textbf{#1}}}
+% ----- Selective emphasis without background shading -----
+% \kw{} : black, bold labels and author names
+\newcommand{\kw}[1]{\textbf{\textcolor{black}{#1}}}
+% \hm{} : key achievements in bold black
+\newcommand{\hm}[1]{\textbf{\textcolor{black}{#1}}}
 
 % ----- Hyperlinks -----
 \hypersetup{
@@ -92,7 +89,7 @@
 
 \entry{Korea Advanced Institute of Science and Technology (KAIST)}{Daejeon, South Korea}
 \subentry{Ph.D. in Computer Science}{09/2021 -- 08/2024}
-Advisors: Prof. Sungho Jo, Prof. Soohwan Song. \quad Research Interests: \textbf{3D Reconstruction}
+Advisors: \href{https://pure.kaist.ac.kr/en/persons/sungho-jo/}{Prof. Sungho Jo}, \href{https://sites.google.com/view/smrlab/professor}{Prof. Soohwan Song}. \quad Research Interests: \textbf{3D Reconstruction}
 \vspace{5pt}
 
 \entry{Korea Advanced Institute of Science and Technology (KAIST)}{Daejeon, South Korea}
@@ -124,7 +121,7 @@ GPA: 3.62 / 4.0 \quad\textbar\quad Graduation with Honors (\textbf{Excellent Deg
 \vspace{4pt}
 
 \entry{Neuro-Machine Augmented Intelligence Lab, KAIST}{South Korea}
-\subentry{Graduate Researcher}{09/2018 -- 06/2024}
+\subentry{Graduate Researcher}{09/2019 -- 06/2024}
 \begin{itemize}
     \item \kw{3D Vision Research:} Conducted research in core 3D reconstruction areas,
           including high-precision feature matching, visual localization, and multi-view depth estimation.
@@ -202,14 +199,14 @@ GPA: 3.62 / 4.0 \quad\textbar\quad Graduation with Honors (\textbf{Excellent Deg
 \section{Honors and Awards}
 
 \begin{itemize}
-    \item \hm{Outstanding Reviewer Award}, CVPR \hfill 2024
-    \item \hm{Silver Medal (Top 9\%)}, Kaggle Image Matching Challenge \hfill 2023
-    \item \textbf{Hyundai Motor Chung Mong-Koo Scholarship} for outstanding PhD students \hfill 2021 -- 2024
-    \item Full Graduate Scholarship, KAIST Master's Program \hfill 2019 -- 2021
+    \item \href{https://www.computer.org/csdl/proceedings-article/cvpr/2024/530000z352/20hQ1juBJfi}{Outstanding Reviewer Award}, CVPR \hfill 2024
+    \item \href{https://www.kaggle.com/competitions/image-matching-challenge-2023/leaderboard}{Silver Medal (Top 9\%)}, Kaggle Image Matching Challenge \hfill 2023
+    \item \href{https://www.hyundai-cmkfoundation.org/en/com/scholarship}{Hyundai Motor Chung Mong-Koo Scholarship} for outstanding PhD students \hfill 2021 -- 2024
+    \item \href{https://admission.kaist.ac.kr/intl-graduate/FinancialSupport/Scholarship/KAISTScholarship/}{Full Graduate Scholarship}, KAIST Master's Program \hfill 2019 -- 2021
     \item Excellence Academic Scholarship, HUST \hfill 2018
     \item Lotte Scholarship for outstanding university students \hfill 2017
-    \item \textbf{Certificate of Excellence (Ranked 1st in academic cohort)}, HUST \hfill 2014
-    \item \textbf{Third Prize}, Vietnam Mathematical Olympiad (VMO) for High School Students \hfill 2013
+    \item Certificate of Excellence (Ranked 1st in academic cohort), HUST \hfill 2014
+    \item Third Prize, Vietnam Mathematical Olympiad (VMO) for High School Students \hfill 2013
 \end{itemize}
 
 % --------------------------------------------------------------
